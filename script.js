@@ -42,7 +42,7 @@ function add_new_image() {
 
     const new_img = document.createElement('img');
     new_img.className = 'Your Image'
-    new_img.src = add_random_image()
+    new_img.src = 'https://picsum.photos/400/300'
     image_container.appendChild(new_img)
 
     const caption = document.createElement('div');
