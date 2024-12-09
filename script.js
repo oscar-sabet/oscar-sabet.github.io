@@ -3,6 +3,10 @@ function close_parent(button) {
     parent_element.remove();
 }
 
+function add_random_image(){
+    img.src = 'https://source.unsplash.com/random/300x300?sig=${Math.random()}'
+    return img
+}
 function add_new_video() {
     const video_div = document.createElement('div');
     video_div.className = 'polaroid';
@@ -38,7 +42,7 @@ function add_new_image() {
 
     const new_img = document.createElement('img');
     new_img.className = 'Your Image'
-    new_img.src = 'https://pixabay.com/get/random'
+    new_img.src = add_random_image()
     image_container.appendChild(new_img)
 
     const caption = document.createElement('div');
