@@ -7,7 +7,6 @@ function add_new_web() {
     const web_div = document.createElement('div');
     web_div.className = 'wrap-div'
     web_div.style.width = '100%'
-    web_div.style.height = '700px'
 
     const close_button = document.createElement('button');
     close_button.className = "close-button";
@@ -19,9 +18,9 @@ function add_new_web() {
     web_div.appendChild(close_button);
 
     const web_iframe = document.createElement('iframe');
-    web_iframe.src = 'https://oscar-sabet.github.io/';
+    web_iframe.src = 'test_site.html';
     web_iframe.width = '100%';
-    web_iframe.height = '100%'
+    web_iframe.height = '700px'
     web_div.appendChild(web_iframe);
     
     const container = document.getElementById('container');
@@ -44,7 +43,7 @@ function add_new_map() {
     const map_iframe = document.createElement('iframe');
     map_iframe.src = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40701.22046947628!2d-4.153854912499758!3d50.38843689411045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486c8d530e95ea3d%3A0x3b282cb5cef58593!2sPlymouth!5e0!3m2!1sen!2suk!4v1733790711020!5m2!1sen!2suk';
     map_iframe.width = '100%';
-    map_iframe.height = '350px'
+    map_iframe.height = '500px'
     map_div.appendChild(map_iframe);
     
     const container = document.getElementById('container');
@@ -83,6 +82,110 @@ function add_new_video() {
     const container = document.getElementById('container');
     container.prepend(video_div);
 }
+function add_new_res() {
+    const vw = window.innerWidth / 100;
+    const vh = window.innerHeight / 100;
+    console.log(vw) // print(vw)
+    const image_div = document.createElement('div');
+    image_div.className = 'polaroid';
+    //section_div.appendChild(image_div);
+
+    const close_button = document.createElement('button');
+    close_button.className = "close-button";
+    close_button.onclick = function() {close_parent(this)};
+    close_button.type = "button";
+    close_button.value = "x";
+    close_button.name = "x";
+    close_button.textContent = "x";
+    image_div.appendChild(close_button)            
+
+    const image_container = document.createElement('div');
+    image_container.className = 'image-container';
+    image_div.appendChild(image_container)
+
+    const new_img = document.createElement('img');
+    new_img.className = 'Your Image'
+    new_img.src = 'image/1000_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg'
+    image_container.appendChild(new_img)
+
+    const width_slider = document.createElement('input');
+    width_slider.type = 'range';
+    width_slider.min = '400';
+    width_slider.max = window.innerWidth; 
+    width_slider.value = '300';
+    width_slider.className = 'slider horizontal-slider';
+    width_slider.oninput = function () {
+        image_div.style.width = `${width_slider.value}px`;
+    };
+    image_div.appendChild(width_slider);
+
+    // Vertical Slider
+    const height_slider = document.createElement('input');
+    height_slider.type = 'range';
+    height_slider.min = '300';
+    height_slider.max = window.innerHeight;
+    height_slider.value = '300';
+    height_slider.className = 'slider vertical-slider';
+    height_slider.style.transform = 'rotate(90deg)'; // Rotate slider vertically
+    height_slider.oninput = function () {
+        image_div.style.height = `${height_slider.value}px`;
+    };
+    image_div.appendChild(height_slider);
+
+    const caption = document.createElement('div');
+    caption.className = 'caption';
+    caption.textContent = 'perferendis quia aut repellendus minima'
+    image_div.appendChild(caption)
+
+    const container = document.getElementById('container');
+    container.prepend(image_div);
+}
+const vw = window.innerWidth / 100;
+const vh = window.innerHeight / 100;
+    
+// function add_new_res() {
+
+//     const image_div = document.createElement('div');
+//     image_div.className = 'polaroid';
+//     //section_div.appendChild(image_div);
+
+//     const close_button = document.createElement('button');
+//     close_button.className = "close-button";
+//     close_button.onclick = function() {close_parent(this)};
+//     close_button.type = "button";
+//     close_button.value = "x";
+//     close_button.name = "x";
+//     close_button.textContent = "x";
+//     image_div.appendChild(close_button)            
+
+//     const image_container = document.createElement('div');
+//     image_container.className = 'image-container';
+//     image_div.appendChild(image_container)
+
+//     const new_img = document.createElement('img');
+//     new_img.className = 'Your Image'
+//     new_img.src = 'image/1000_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg'
+//     image_container.appendChild(new_img)
+
+//     const slider = document.createElement('input');
+//     slider.type = 'range';
+//     slider.min = '200'; // Minimum width in pixels
+//     slider.max = '1000'; // Maximum width in pixels
+//     slider.value = '300'; // Default value
+//     slider.className = 'slider';
+//     slider.oninput = function () {
+//         image_div.style.width = `${slider.value}px`;
+//     };
+//     image_div.appendChild(slider);
+
+//     const caption = document.createElement('div');
+//     caption.className = 'caption';
+//     caption.textContent = 'perferendis quia aut repellendus minima'
+//     image_div.appendChild(caption)
+
+//     const container = document.getElementById('container');
+//     container.prepend(image_div);
+// }
 
 function add_new_image() {
 
@@ -105,7 +208,7 @@ function add_new_image() {
 
     const new_img = document.createElement('img');
     new_img.className = 'Your Image'
-    new_img.src = 'https://pixabay.com/get/random'
+    new_img.src = 'image/1000_F_852510478_KdKJ1xGmlHICE8TD3QM68W6m7m1E7fHT.jpg'
     image_container.appendChild(new_img)
 
     const caption = document.createElement('div');
