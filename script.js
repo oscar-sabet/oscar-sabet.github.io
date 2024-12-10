@@ -18,7 +18,7 @@ function add_new_web() {
     web_div.appendChild(close_button);
 
     const web_iframe = document.createElement('iframe');
-    web_iframe.src = 'test_site.html';
+    web_iframe.src = 'index.html';
     web_iframe.width = '100%';
     web_iframe.height = '700px'
     web_div.appendChild(web_iframe);
