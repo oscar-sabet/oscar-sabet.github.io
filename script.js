@@ -7,6 +7,7 @@ function add_new_web() {
     const web_div = document.createElement('div');
     web_div.className = 'wrap-div'
     web_div.style.width = '100%'
+    web_div.style.height = '700px'
 
     const close_button = document.createElement('button');
     close_button.className = "close-button";
