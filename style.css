@@ -1,4 +1,4 @@
-        body, .container {
+body, .container {
     --header-color: #2b2b2b;
     --highlight-color-blue: rgb(0, 155, 119);
     --bg-color: #f9f9f9;
@@ -13,19 +13,20 @@
     justify-content: space-between;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.page-section .wrap-div {
-  position: relative;
-  display: block;
-}
-.wrap-div  .iframe {
-  display:inline;
+    align-items: flex-start;
 }
 .wrap-div {
   margin: 20px;
   position: relative;
 }
+.page-section .wrap-div {
+  position: relative;
+  display: inline-block;
+}
+.wrap-div  .iframe {
+  display:inline;
+}
+
 iframe {
   border-radius: 15px;
   border: 0px;
@@ -35,7 +36,7 @@ iframe {
   border-radius: 15px;
   border: 0px;
   box-shadow: var(--shadow);
-  height: 500px;
+  /* height: 500px; */
 }
 .page-section .iframe {
   display: block;
@@ -229,7 +230,7 @@ footer li:last-child::after {
     border-radius: 10px;
     max-width: 800px;
     box-shadow: var(--shadow);
-    display: grid;
+    /* display: grid; */
 }
 
 .form-container h3 {
@@ -349,8 +350,18 @@ footer li:last-child::after {
 .custom-checkbox input[type="checkbox"]:checked + label .checkmark::after {
     display: block;
 }
-
-
+.horizontal-slider {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    color: var(--highlight-color-blue);
+}
+.vertical-slider {
+    position: absolute;
+    top: 80px;
+    left: -50px;
+    color: var(--highlight-color-blue);
+}
 
 /* Responsive Behavior */
 @media (max-width: 768px) {
@@ -450,7 +461,7 @@ ol li ul li {
     /* visibility: hidden; */
     transition: transform 0.5s, box-shadow 0.3s;
 }
-.add-button, .add-image, .add-video , .add-map, .add-web{
+.add-button, .add-image, .add-video , .add-map, .add-web, .add-res{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -486,8 +497,14 @@ button.add-web {
     bottom: 25px;
     right: 325px;
     font-size: x-large;
+
 }
-.add-button:hover, .add-image:hover, .close-button:hover, .add-video:hover, .add-map:hover, .add-web:hover {
+button.add-res {
+    bottom: 25px;
+    right: 400px;
+    font-size: x-large;
+}
+.add-button:hover, .add-image:hover, .close-button:hover, .add-video:hover, .add-map:hover, .add-web:hover, add-buttons:hover {
     box-shadow: var(--shadow-hover);
     /* visibility: visible; */
 
