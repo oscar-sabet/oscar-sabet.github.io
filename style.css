@@ -14,11 +14,33 @@
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.iframe, iframe {
+
+.page-section .wrap-div {
+  position: relative;
+  display: block;
+}
+.wrap-div  .iframe {
+  display:inline;
+}
+.wrap-div {
+  margin: 20px;
+  position: relative;
+}
+iframe {
+  border-radius: 15px;
+  border: 0px;
+  box-shadow: var(--shadow);
+}
+.iframe {
   border-radius: 15px;
   border: 0px;
   box-shadow: var(--shadow);
   height: 500px;
+}
+.page-section .iframe {
+  display: block;
+  z-index: 900;
+  /* position: relative; */
 }
 .container {
     margin-top: 40px;
@@ -42,6 +64,8 @@
     text-decoration: none;
     height: 100%;
     margin:0px;
+    display: block;
+    float:left;
 }
 .nav a:hover {
     color: white;
@@ -64,7 +88,7 @@
     background-color: crimson;
     border-radius: 5px;
 }
-.login {
+.login, .login {
     text-align: right;
     float:right;
 }
@@ -127,8 +151,8 @@ footer li:last-child::after {
 .polaroid {
     background-color: var(--bg-color);
     width: 400px; /* Adjust as needed */
-    margin: 5px;
-    margin-top: 0px;
+    margin: 20px;
+    /* margin-top: 0px; */
     margin-bottom: 10px;
     box-shadow: var(--shadow);
     position: relative;
@@ -139,6 +163,13 @@ footer li:last-child::after {
     float: right; /* Align to the right */
     clear: right;
 }
+/* images embedded in page sections(articles) */
+.page-section .polaroid { 
+    margin: 5px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
 .polaroid .image-container {
     overflow: hidden; /* Ensure the image stays within the bounds */
     height: 300px; /* Fixed height to ensure all images are the same size */
@@ -191,7 +222,7 @@ footer li:last-child::after {
 
 
 .form-container {
-    margin: 20px;
+    /* margin: 20px; */
     padding: 20px;
     background-color: var(--bg-color);
     border: 0px solid #ccc;
@@ -360,7 +391,7 @@ ol li ul li {
 }
 
 .contact-container {
-    margin: 20px;
+    /* margin: 20px; */
     padding: 20px;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -416,10 +447,10 @@ ol li ul li {
     padding: 0px;
     font-size: large;
     text-align: center;
-
+    /* visibility: hidden; */
     transition: transform 0.5s, box-shadow 0.3s;
 }
-.add-button, .add-image, .add-video {
+.add-button, .add-image, .add-video , .add-map, .add-web{
     position: fixed;
     width: 50px;
     height: 50px;
@@ -433,6 +464,8 @@ ol li ul li {
     text-align: center;
     padding: 0px;
     transition: transform 0.5s, box-shadow 0.3s;
+    
+    
 }
 button.add-image {
     bottom: 25px;
@@ -444,8 +477,20 @@ button.add-image {
     right: 175px;
     font-size: x-large;
   }
-.add-button:hover, .add-image:hover, .close-button:hover, .add-video:hover {
+button.add-map {
+    bottom: 25px;
+    right: 250px;
+    font-size: x-large;
+}
+button.add-web {
+    bottom: 25px;
+    right: 325px;
+    font-size: x-large;
+}
+.add-button:hover, .add-image:hover, .close-button:hover, .add-video:hover, .add-map:hover, .add-web:hover {
     box-shadow: var(--shadow-hover);
+    /* visibility: visible; */
+
 }
 .page-section, .polaroid {
     animation: fadeIn 0.5s ease-in-out;
